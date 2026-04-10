@@ -15,7 +15,7 @@ def sql(
 ):
     """Executa SQL diretamente em arquivos CSV/JSON/Parquet."""
     conn = duckdb.connect()
-    conn.execute(f"CREATE VIEW data AS SELECT * FROM read_auto('{file}')")
+    conn.execute(f"CREATE VIEW data AS SELECT * FROM read_csv_auto('{file}')")
     result = conn.execute(query).df()
 
     table = Table(show_header=True, header_style="bold cyan")
@@ -24,5 +24,4 @@ def sql(
     for _, row in result.iterrows():
         table.add_row(*[str(v) for v in row])
     console.print(table)
-    console.print(f"
-[dim]{len(result)} registros[/]")
+    console.print(f"[dim]{len(result)} registros[/]")

@@ -19,9 +19,7 @@ def analyze(
     if cols:
         df = df[[c.strip() for c in cols.split(",")]]
 
-    console.print(f"
-[bold green]📊 Arquivo:[/] {file}  |  [bold]{len(df):,}[/] linhas × [bold]{len(df.columns)}[/] colunas
-")
+    console.print(f"[bold green]📊 Arquivo:[/] {file}  |  [bold]{len(df):,}[/] linhas × [bold]{len(df.columns)}[/] colunas")
 
     table = Table(title="Primeiras linhas", show_header=True, header_style="bold cyan")
     for col in df.columns:
@@ -30,8 +28,7 @@ def analyze(
         table.add_row(*[str(v) for v in row])
     console.print(table)
 
-    console.print("
-[bold]Estatísticas Numéricas:[/]")
+    console.print("[bold]Estatísticas Numéricas:[/]")
     console.print(df.describe().to_string())
 
 

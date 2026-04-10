@@ -1,0 +1,8 @@
+README.md
+setup.py
+data_cli_kaique.egg-info/PKG-INFO
+data_cli_kaique.egg-info/SOURCES.txt
+data_cli_kaique.egg-info/dependency_links.txt
+data_cli_kaique.egg-info/entry_points.txt
+data_cli_kaique.egg-info/requires.txt
+data_cli_kaique.egg-info/top_level.txt
